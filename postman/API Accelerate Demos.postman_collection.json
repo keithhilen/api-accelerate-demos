@@ -1,0 +1,629 @@
+{
+	"info": {
+		"_postman_id": "ad9a5016-8d18-463b-9c03-a1ea5958ac82",
+		"name": "API Accelerate Demos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33158651"
+	},
+	"item": [
+		{
+			"name": "Demo 1",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:10001",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10001"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demo 2",
+			"item": [
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:10002",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10002"
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demo 3",
+			"item": [
+				{
+					"name": "Amortization",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"rate\": 0.055,\n      \"principal\": 400000,\n      \"term\": 360\n}\n"
+						},
+						"url": {
+							"raw": "127.0.0.1:10003/amortization",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10003",
+							"path": [
+								"amortization"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demo 4",
+			"item": [
+				{
+					"name": "List of Persons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:10004/persons",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10004",
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of Persons - Tabular",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/tabular",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:10004/persons",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10004",
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:10004/persons/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10004",
+							"path": [
+								"persons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Person",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"William\",\n    \"last_name\": \"Shakespeare\",\n    \"email_address\": \"shakespeare@poets.net\"\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:10004/persons",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10004",
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Person",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Willy\"\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:10004/persons/3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10004",
+							"path": [
+								"persons",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demo 5",
+			"item": [
+				{
+					"name": "Router 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:10005/test1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10005",
+							"path": [
+								"test1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Router 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:10005/test2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10005",
+							"path": [
+								"test2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hello World",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:10005/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10005",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:10005/xyz",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10005",
+							"path": [
+								"xyz"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demo 6",
+			"item": [
+				{
+					"name": "List of Persons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:10006/persons",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10006",
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:10006/persons/1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10006",
+							"path": [
+								"persons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Person",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Thomas\",\n    \"last_name\": \"Eliot\",\n    \"email_address\": \"eliot@poets.net\"\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:10006/persons",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10006",
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Person",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"T.S.\"\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:10006/persons/3",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10006",
+							"path": [
+								"persons",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demo 7",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"pm.environment.set('auth_token', response.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set('auth_token', \"\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n      \"user_name\": \"user1@test.net\",\n      \"password\": \"Orange123!\"\n    }\n"
+						},
+						"url": {
+							"raw": "127.0.0.1:10007/auth",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10007",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bad Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"pm.environment.set('auth_token', response.token);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set('auth_token', \"\");",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n      \"user_name\": \"user1@test.net\",\n      \"password\": \"Bad password\"\n    }\n"
+						},
+						"url": {
+							"raw": "127.0.0.1:10007/auth",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10007",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{auth_token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:10007/persons",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "10007",
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

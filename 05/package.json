@@ -1,0 +1,14 @@
+{
+  "name": "API Accelerate Demo 5",
+  "version": "1.0.0",
+  "description": "Demo app for the API Accelerate framework",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/api-accelerate/bin/run.js"
+  },
+  "author": "Keith Hilen",
+  "license": "MIT",
+  "dependencies": {
+    "api-accelerate": "^1.0.4"
+  }
+}

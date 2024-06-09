@@ -1,5 +1,4 @@
-module.exports = async (context, config) => {
-
-require('./controllers/auth.js').configure(context);
-require('./models/accounts.js').configure(context);
+module.exports = async (app, config) => {
+  require('./controllers/auth.js').initialize(app, config);
+  require('./models/accounts.js').initialize(app, config);
 }

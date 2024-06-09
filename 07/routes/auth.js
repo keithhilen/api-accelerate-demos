@@ -8,5 +8,5 @@ var auth = require('../controllers/auth.js');
 
 router.route('/auth')
   .post(auth.login)
-  .get(auth.authorize, auth.check);
+  .get(auth.authenticate, auth.check);
 };

@@ -1,26 +1,31 @@
 'use strict'
 
 // models/accounts.js
+const md5 = require('md5');
 
 const accounts = [];
 
-exports.configure = (context) => {
+exports.initialize = (app, config) => {
 
+  var params = config.auth || {};
+  var password_salt = params.password_salt;
+
+  const hash = (password) => {
+    return md5(password + password_salt)
+  }
+
+  // Create demo accounts
   accounts.push({
     account_id: 1,
     user_name: 'user1@test.net',
-    password: context.auth.hashPassword('Orange123!')
-  });  
+    password: hash('Orange123!')
+  });
 
   accounts.push({
-    account_id: 1,
+    account_id: 2,
     user_name: 'user2@test.net',
-    password: context.auth.hashPassword('AlreadyDid%5')
+    password: hash('AlreadyDid%5')
   });  
-}
-
-const hashPassword = (context, password) => {
-  return context.auth.hashPassword(password);
 }
 
 exports.authenticate = async (context, params) => {
@@ -28,7 +33,7 @@ exports.authenticate = async (context, params) => {
     try {
 
       var user_name = params.user_name;
-      var password = context.auth.hashPassword(params.password);
+      var password = params.password;
 
       for (var account of accounts) {
         if ((account.user_name == user_name) && (account.password == password)) {

@@ -4,36 +4,24 @@
 
 const accounts = require('../models/accounts.js');
 
-var login = null;
-var authorization = null;
+var login_user = null;
+var authenticate_user = null;
 
-exports.configure = (context) => {
-  login = context.auth.buildLogin();
+exports.initialize = (app, config) => {
 
-  const validate = async (context, params) => {
-    return new Promise(async (resolve, reject) => {
+  login_user = app.handlers.create('login_user', app)
+    .authenticate(accounts.authenticate);
 
-      try {
-        var account = await accounts.authenticate(context,params);
-        resolve(account);
+  authenticate_user = app.handlers.create('authenticate_user', app);
 
-      } catch(e) {
-        reject(e);
-      }
-    });
-  };
-
-  login.setAction('validate', validate);
-
-  authorization = context.auth.buildAuthorization();
 }
 
 exports.login = (req, res, next) => {
-   return login.controller(req, res, next);
+   return login_user(req, res, next);
 }
 
-exports.authorize = (req, res, next) => {
-   return authorization.controller(req, res, next);
+exports.authenticate = (req, res, next) => {
+   return authenticate_user(req, res, next);
 }
 
 exports.check = async (req, res, next) => {
